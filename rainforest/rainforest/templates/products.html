@@ -2,8 +2,9 @@
 {% block content %}
     {% for product in products %}
     <img src='{{ product.image_url }}'>
-        <p>{{ product.name }}</p>
-        <p>{{ product.description }}</p>
-        <p>{{ product.price_in_cents }}</p>
+        <a href="{% url 'product_details' id=product.pk %}">
+        <H3>{{ product.name }}</H3></a>
+        <p>DETAILS: {{ product.description }}</p>
+        <p>PRICE: {{ product.price_in_cents }}</p>
     {% endfor %}
 {% endblock %}

@@ -18,6 +18,8 @@ from django.urls import path
 from rainforest.views import *
 
 urlpatterns = [
+    path("", root),
     path('admin/', admin.site.urls),
     path('rainforest/products/', products_home ),
+    path('rainforest/products/<int:id>', show_product, name='product_details'),
 ]
