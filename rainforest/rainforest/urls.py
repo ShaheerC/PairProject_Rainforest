@@ -23,5 +23,5 @@ urlpatterns = [
     path('rainforest/products/', products_home ),
     path('rainforest/products/<int:id>', show_product, name='product_details'),
     path('rainforest/products/new', new),
-    # path('products/create', create),
+    path('rainforest/products/create', create),
 ]
