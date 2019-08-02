@@ -14,3 +14,7 @@ def show_product(request, id):
     product = Product.objects.get(pk=id)
     context = {'product': product}
     return render(request, 'product.html', context)
+
+def new(request):
+    context = {}
+    return render(request, 'form.html', context)

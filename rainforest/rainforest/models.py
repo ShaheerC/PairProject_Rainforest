@@ -1,4 +1,7 @@
 from django.db import models
+from django.forms import ModelForm
+from django.core.validators import URLValidator, MinValueValidator
+from django.core.exceptions import ValidationError
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -7,3 +10,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class ProductForm(ModelForm):
+    
+    class Meta:
+        model = Product
+        fields = ["name", "description", "price_in_cents"]
