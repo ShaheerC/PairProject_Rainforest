@@ -1,6 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
-from django.core.validators import URLValidator, MinValueValidator
+from django.core.validators import URLValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 
 class Product(models.Model):
