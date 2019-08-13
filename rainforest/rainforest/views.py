@@ -28,13 +28,19 @@ def create(request):
     else:
         context = {'form': form}
         return render(request, 'form.html', context)
-
+      
 def delete_product(request, product_id):
     product = Product.objects.get(id = product_id)
     product.delete()
     return HttpResponseRedirect('/rainforest/products')
 
-def edit(request, id):
+def edit_view(request, id):
+    product = Product.objects.get(pk=id)
+    form = ProductForm(request.POST, instance= product)
+    context = {"form": form, 'product': product}
+    return render(request, 'edit.html', context)
+
+def edit_create(request, id):
     product = Product.objects.get(pk=id)
     if request.method == 'POST':
         form = ProductForm(request.POST)
@@ -50,5 +56,4 @@ def edit(request, id):
     form = ProductForm(request.POST)
     context = {'product': product, 'form': form}
     return HttpResponse(render(request, 'edit.html', context))
-    
-
+   
