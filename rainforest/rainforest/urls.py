@@ -24,5 +24,6 @@ urlpatterns = [
     path('rainforest/products/<int:id>', show_product, name='product_details'),
     path('rainforest/products/new', new),
     path('rainforest/products/create', create),
-    path('rainforest/products/<int:id>/edit', edit, name='edit_product'),
+    path('rainforest/products/<int:id>/edit', edit_view, name='edit_view'),
+    path('rainforest/products/<int:id>/editcreate', edit_create, name='edit_create'),
 ]
