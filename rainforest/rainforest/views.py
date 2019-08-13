@@ -26,8 +26,13 @@ def create(request):
         form.save()
         return HttpResponseRedirect("/rainforest/products")
     else:
-        context = {"form": form}
+        context = {'form': form}
         return render(request, 'form.html', context)
+
+def delete_product(request, product_id):
+    product = Product.objects.get(id = product_id)
+    product.delete()
+    return HttpResponseRedirect('/rainforest/products')
 
 def edit(request, id):
     product = Product.objects.get(pk=id)
@@ -46,3 +51,4 @@ def edit(request, id):
     context = {'product': product, 'form': form}
     return HttpResponse(render(request, 'edit.html', context))
     
+
