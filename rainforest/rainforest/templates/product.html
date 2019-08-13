@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     <H3>{{ product.name }}</H3>
+    <a href="{% url 'edit_view' product.id %}"><input type="submit" value="Edit Product"></a>
+    
     <form action = "{% url 'delete_product' product.id %}" method="GET">
         {% csrf_token %}
         <input type="submit" value = "Delete Product">

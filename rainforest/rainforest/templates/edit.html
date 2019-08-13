@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h3>Editing {{ product.name }} </h3>
+<h3>Editing: <a href="{% url 'product_details' product.id %}">{{ product.name }}</h3></a>
     
     <form action="{% url 'edit_create' product.id %}" method="POST">
         {% csrf_token %}

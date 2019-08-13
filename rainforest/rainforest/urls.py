@@ -22,8 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('rainforest/products/', products_home ),
     path('rainforest/products/<int:id>', show_product, name='product_details'),
-    path('rainforest/products/new', new),
-    path('rainforest/products/create', create),
+    path('rainforest/products/new', new, name='new_product'),
+    path('rainforest/products/create', create, name='create_product'),
     path('rainforest/products/<int:id>/edit', edit_view, name='edit_view'),
     path('rainforest/products/<int:id>/editcreate', edit_create, name='edit_create'),
     path('rainforest/products/<int:product_id>/delete', delete_product, name='delete_product')
