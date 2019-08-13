@@ -1,6 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import URLValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 
 
@@ -24,3 +24,5 @@ class ProductForm(ModelForm):
         price_in_cents = cleaned_data.get('price_in_cents')
         if len(description) <= 10 or len(description) >=500:
             self.add_error('description', 'Description must be between 10 and 500 characters long')
+
+
