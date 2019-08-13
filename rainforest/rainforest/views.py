@@ -28,3 +28,8 @@ def create(request):
     else:
         context = {'form': form}
         return render(request, 'form.html', context)
+
+def delete_product(request, product_id):
+    product = Product.objects.get(id = product_id)
+    product.delete()
+    return HttpResponseRedirect('/rainforest/products')
