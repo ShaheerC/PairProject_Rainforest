@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django.core.validators import URLValidator, MinLengthValidator, MaxLengthValidator
 from django.core.exceptions import ValidationError
 
+
 class Product(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()

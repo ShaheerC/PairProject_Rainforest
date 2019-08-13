@@ -26,4 +26,5 @@ urlpatterns = [
     path('rainforest/products/create', create),
     path('rainforest/products/<int:id>/edit', edit_view, name='edit_view'),
     path('rainforest/products/<int:id>/editcreate', edit_create, name='edit_create'),
+    path('rainforest/products/<int:product_id>/delete', delete_product, name='delete_product')
 ]
