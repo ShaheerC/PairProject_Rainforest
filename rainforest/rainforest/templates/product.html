@@ -9,4 +9,17 @@
     </form>
     <p>DETAILS: {{ product.description }} </p>
     <p>PRICE: {{ product.price_in_cents }}</p>
+    <h2>Reviews:</h2>
+    <ul>
+    {% if reviews.count %}
+        {% for review in reviews %}
+        <li>
+            <p>{{ review.name }}</p>
+            <p>{{ review.content }}</p>
+        </li>
+        {% endfor %}
+    {% else %}
+        <p>No reviews yet</p>
+    {% endif %}
+    </ul>
 {% endblock %}

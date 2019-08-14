@@ -26,5 +26,10 @@ urlpatterns = [
     path('rainforest/products/create', create, name='create_product'),
     path('rainforest/products/<int:id>/edit', edit_view, name='edit_view'),
     path('rainforest/products/<int:id>/editcreate', edit_create, name='edit_create'),
-    path('rainforest/products/<int:product_id>/delete', delete_product, name='delete_product')
+    path('rainforest/products/<int:product_id>/delete', delete_product, name='delete_product'),
+    path('rainforest/products/<int:product_id>/new_review', new_review, name = 'new_review'),
+    path('rainforest/products/<int:product_id>/create_review', create_review, name = 'create_review'),
+    path('rainforest/products/<int:product_id>/review/<int:review_id>', show_review, name = 'show_review'),
+    path('rainforest/products/<int:product_id>/review/<int:review_id>/edit', edit_review, name = 'edit_review'),
+    path('rainforest/products/<int:product_id>/review/<int:review_id>/make_edit', make_review_edit, name = 'make_review_edit')
 ]
