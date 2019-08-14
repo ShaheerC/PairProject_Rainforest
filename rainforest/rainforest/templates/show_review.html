@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Looking at review</h1>
+    <h1>Looking at review for {{review.product}}</h1>
+    <h3>{{ review.name }}</h3>
+    <h4>{{ review.content }}</h4>
+    <a href="{% url 'edit_review' review.product.id review.id %}"><input type="submit" value="Edit Review"></a>
+    </br></br>
 {% endblock content %}
